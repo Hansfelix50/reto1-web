@@ -6,9 +6,96 @@ html {
     line-height: 1.4;
 }
 
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 1fr 100px;
+    height: 100vh;
+}
+
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
+}
+
+body>header {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #fbfbda;
+    margin: 10px;
+    font-weight: bold;
+    color: #00000038;
+}
+
+body>footer {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #ffeffb;
+    margin: 10px;
+    font-weight: bold;
+    color: #00000038;
+}
+
+body>main {
+    border-radius: 4px;
+    background: #eef3ec;
+    margin: 10px;
+}
+
+body>nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #ffefef;
+    margin: 10px;
+    font-weight: bold;
+    color: #00000038;
+}
+
+main>article{
+    padding: 15px;
+}
+article.comentario{
+    margin-left: 8%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    margin: 10px 10px 10px 10%;
+}
+
+input[type="text"]{
+    height: 30px;
+    border: 1px solid #e0e5de;
+    width: 60%;
+}
+
+button{
+    background: #91c393;
+    border: 1px solid #e0e5de;
+    height: 35px;
+}
+time{
+    display: block;
+    font-size: 13px;
+}
+
+.etiquetas{
+    background: gray;
+    border-radius: 4px;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+h1,h2,h3,h4,h5{
+    margin: 0
 }
 
 ::selection {
@@ -57,33 +144,17 @@ textarea {
    ========================================================================== */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-
-}
+@media only screen and (min-width: 35em) {}
 
 @media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {}
 
-}
 
 /* ==========================================================================
    Helper classes
@@ -133,6 +204,7 @@ textarea {
     *zoom: 1;
 }
 
+
 /* ==========================================================================
    Print styles
    ========================================================================== */
@@ -146,53 +218,44 @@ textarea {
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     img {
         max-width: 100% !important;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
+      
     }
 }
